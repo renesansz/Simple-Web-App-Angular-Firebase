@@ -1,0 +1,12 @@
+#chat-display {
+    background: #EEE;
+    min-height: 250px;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+.done {
+    text-decoration: line-through;
+}
+.list-unstyled li {
+    list-style: none;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="chat-app">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Chat Web App</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="vendors/bootstrap/css/bootstrap-theme.css">
+</head>
+<body>
+    
+    <div class="container" ng-controller="ChatController">
+        <div class="row">
+            <div class="col-md-12">            
+                <h2>CHAT APP</h2>
+                <input type="text" placeholder="Username" ng-model="msgSender">
+            </div>
+        </div>
+        <!-- CHAT DISPLAY -->
+        <div id="chat-display" class="row">
+            <div class="col-md-12">
+                <strong>Hello! Welcome to Chat App</strong>
+                <ul class="list-unstyled">
+                    <li ng-repeat="msg in messages">
+                        <strong>{{ msg.from }}</strong>: {{ msg.body }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- USER CONTROLS -->
+        <div class="row">
+            <div class="col-md-12">
+                <input class="form-control" type="text" placeholder="Message" ng-model="msgBody">
+                <button class="btn btn-primary" ng-click="SendMessage()">SEND</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- VENDORS -->
+    <script type="text/javascript" src="vendors/angular.js"></script>
+    <script type="text/javascript" src="vendors/firebase.js"></script>
+    <script type="text/javascript" src="vendors/angularfire.js"></script>
+
+    <!-- ANGULAR APP -->
+    <script type="text/javascript" src="angular/app.js"></script>
+
+    <!-- DEPENDENCIES -->
+    <script type="text/javascript" src="angular/controllers/app.controllers.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script type="text/javascript" src="angular/controllers/chat/controller.js"></script>
+
+</body>
+</html>
