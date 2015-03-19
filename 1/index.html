@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todo-app">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Web App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    
+    <h2>TODO APP</h2>
+
+    <div ng-controller="TodoController">
+        
+        <ul class="list-unstyled" ng-repeat="todo in todoList track by $index">
+            <li ng-class="{done: todo.status == 1}">
+                <input type="checkbox" ng-model="todo.status"> <span ng-bind="todo.title"></span> <button ng-click="DeleteTodo($index)">X</button>
+            </li>
+        </ul>
+
+        <input type="text" placeholder="New Todo" ng-model="newTodo">
+        <button ng-click="AddTodo()">Add Todo</button>
+
+    </div>
+
+    <!-- VENDORS -->
+    <script type="text/javascript" src="angular.js"></script>
+
+    <!-- ANGULAR APP -->
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
